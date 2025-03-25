@@ -1,0 +1,9 @@
+---
+- name: Checking if ansible_facts will work based on my own idea
+  hosts: all
+  tasks:
+
+    - name: Ping all the Hosts on the inventory
+      ansible.buitin.command: ping
+      when: ansible_facts['distribution'] == "ubuntu"
+

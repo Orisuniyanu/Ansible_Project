@@ -1,0 +1,17 @@
+---
+- name: Installation of Nginx for different distribution
+  hosts: all
+  become: true
+  tasks:
+    - name: Installtion of Nginx on Debian Linux Distribution
+      ansible.builtin.apt:
+        name: nginx
+      when: ansible_facts['distribution'] == "Ubuntu"
+
+    - name: Installtion of Nginx on Debian Linux Distribution
+      ansible.builtin.yum:
+        name: nginx
+      when: ansible_facts['distribution'] == "RedHat"
+
+
+

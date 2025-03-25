@@ -1,0 +1,9 @@
+---
+- name: testing out debug
+  hosts: all
+  tasks:
+    - name: debug
+      ansible.builtin.copy:
+        content: "This is my distribution {{ansible_distribution}}"
+        dest: ~/distro.txt
+
